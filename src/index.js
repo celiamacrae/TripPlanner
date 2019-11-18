@@ -1,7 +1,8 @@
 console.log("Hello from JavaScript");
+const marker = require("/marker.js");
 
 const mapboxgl = require("mapbox-gl");
-mapboxgl.accessToken = "";
+mapboxgl.accessToken = 'pk.eyJ1IjoiY2VsaWFtYWNyYWUiLCJhIjoiY2szNG93ODlnMDNudTNsb2FjOWp4MzdlMyJ9.LvAEHueXHC8b5aBymH1Hbw';
 
 const map = new mapboxgl.Map({
   container: "map",
@@ -9,3 +10,7 @@ const map = new mapboxgl.Map({
   zoom: 12, // starting zoom
   style: "mapbox://styles/mapbox/streets-v10" // mapbox has lots of different map styles available.
 });
+
+new mapboxgl.Marker(marker('hotel')).setLngLat([-74.009151, 40.705086]).addTo(map);
+
+
